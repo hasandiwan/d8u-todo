@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20210122074456) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "lead_id", null: false
+    t.string "name"
+    t.integer "lead_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name", "lead_id"], name: "index_teams_on_name_and_lead_id", unique: true
