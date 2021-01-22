@@ -6,27 +6,26 @@ class TaskTest < ActiveSupport::TestCase
     @user.name = 'Team'
     @user.email = 'team@example.com'
     @user.password = 'foo'
-    @user.save!
+    @user.save
 
     @team = Team.new()
     @team.lead_id = @user.id
     @team.name = "foo"
-    @team.save!
-    
+    @team.save
+
+    Task.destroy_all
     @task = Task.new()
-    @task.team = @team
-    @task.is_ephemeral = false
+    @task.team = Team.first
     @task.frequency = 7
-    @task.due_date = due = DateTime.now
+    @task.due_date = due = Date.today
     @task.title = 'Call mum'
     @task.description = 'tel:+17864367500'
-    @task.creator = @user
+    @task.creator = User.first
     @task.save!
 
     @task.completed = true
-    @task.save!
-    puts "#{@task.is_ephemeral} #{@task.due_date.to_date} #{due.to_date + @task.frequency.to_i}"
-    assert @task.due_date.to_date == due.to_date + @task.frequency.to_i.days
+
+    assert @task.due_date.to_date == Date.today + 7.days
   end
   
 end

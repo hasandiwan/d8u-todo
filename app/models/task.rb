@@ -4,7 +4,7 @@ class Task < ApplicationRecord
   validates :creator_id, :team_id, presence: true
   validates :public, inclusion: { in: [true, false] }
   validates :completed, inclusion: { in: [true, false] }
-
+  
   belongs_to :creator, class_name: :User
   belongs_to :assignee, class_name: :User, optional: true
   belongs_to :project, optional: true
@@ -13,4 +13,9 @@ class Task < ApplicationRecord
     dependent: :destroy
   belongs_to :team
 
+  def completed=(value)
+    super(value)
+    puts "Adjusted completed"
+    self.due_date = self.due_date + self.frequency
+  end
 end

@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20210122074456) do
     t.string "description"
     t.boolean "public", default: true
     t.boolean "completed", default: false
-    t.datetime "due_date"
+    t.date "due_date"
     t.integer "creator_id", null: false
     t.integer "assignee_id"
     t.integer "project_id"
@@ -41,8 +41,7 @@ ActiveRecord::Schema.define(version: 20210122074456) do
     t.integer "team_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "frequency", default: -1
-    t.boolean "is_ephemeral", default: false
+    t.integer "frequency", default: 0
     t.index ["assignee_id"], name: "index_tasks_on_assignee_id"
     t.index ["creator_id"], name: "index_tasks_on_creator_id"
     t.index ["parent_task_id"], name: "index_tasks_on_parent_task_id"
