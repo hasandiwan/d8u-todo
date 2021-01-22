@@ -5,7 +5,7 @@ class CreateTasks < ActiveRecord::Migration[5.1]
       t.string :description
       t.boolean :public, default: true
       t.boolean :completed, default: false
-      t.datetime :due_date
+      t.date :due_date
       t.integer :creator_id, null: false
       t.integer :assignee_id
       t.integer :project_id, null: false
