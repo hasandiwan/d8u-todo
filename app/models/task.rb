@@ -15,7 +15,9 @@ class Task < ApplicationRecord
 
   def completed=(value)
     super(value)
-    puts "Adjusted completed"
-    self.due_date = self.due_date + self.frequency
+    begin
+      self.due_date = self.due_date + self.frequency
+    rescue
+    end
   end
 end
