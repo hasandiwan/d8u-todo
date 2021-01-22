@@ -2,19 +2,31 @@ require 'test_helper'
 
 class TaskTest < ActiveSupport::TestCase
   test "completion adjuts due date forward if not ephemeral" do
-    @user = User.new({name: 'me', email: 'test@example.com', password: 'tset'})
+    @user = User.new
+    @user.name = 'Team'
+    @user.email = 'team@example.com'
+    @user.password = 'foo'
     @user.save!
-    # FIXME Why is @team.name nil?
-    @team = Team.new({lead: user, name: @user.name}) 
+
+    @team = Team.new()
+    @team.lead_id = @user.id
+    @team.name = "foo"
     @team.save!
-    @task = Task.new({team: @team, is_ephemeral: false, frequency: 7, due_date: DateTime.now, title: 'Call mum', description: '+1 7864367500', creator_id: user.id})
+    
+    @task = Task.new()
+    @task.team = @team
+    @task.is_ephemeral = false
+    @task.frequency = 7
+    @task.due_date = due = DateTime.now
+    @task.title = 'Call mum'
+    @task.description = 'tel:+17864367500'
+    @task.creator = @user
     @task.save!
 
-    @task.is_complete = true
-    # after_save validation on task
-    days = @task.frequency.to_i
-    assert @task.due_date == DateTime.now + days.days
-    assert @task.is_complete == false
+    @task.completed = true
+    @task.save!
+    puts "#{@task.is_ephemeral} #{@task.due_date.to_date} #{due.to_date + @task.frequency.to_i}"
+    assert @task.due_date.to_date == due.to_date + @task.frequency.to_i.days
   end
   
 end
