@@ -1,0 +1,184 @@
+.sidebar{
+  height: 100vh;
+  background-color: #222b37;
+  width: 240px;
+  color: white;
+}
+
+.sidebar-team-members > div{
+  padding: 3px;
+}
+
+.sidebar-team-members > ul >li {
+  border-radius: 28px;
+  border: dashed white 1px;
+  width: 28px;
+  height: 28px;
+}
+.sidebar-team-members > ul {
+  display: flex;
+  flex-flow: wrap;
+  margin-bottom: 5px;
+  padding: 5px;
+  justify-content: center;
+}
+
+[class^="member-icon"]{
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  margin: 4px 4px;
+  padding: 0;
+  color: white;
+  vertical-align: center;
+  text-align: center;
+}
+
+[class^="member-icon-user"] > div{
+  position: relative;
+  top: 28%;
+  color: white;
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+.member-icon-user-0{
+  background-color: #F94449;
+}
+
+.member-icon-user-1{
+  background-color: #E686DF;
+}
+
+.member-icon-user-2{
+  background-color: #BBBBDA;
+}
+
+.member-icon-user-3{
+  background-color: #A3CCA7;
+}
+
+.member-icon-user-4{
+  background-color: #2FA6BA;
+}
+
+
+div.member{
+  position: relative;
+  left: 23%;
+  top: 20%;
+}
+
+.sidebar > .sidebar-content > img{
+  height: 100px;
+  padding: 20px;
+  align-self: center;
+}
+
+.sidebar > .sidebar-content > .spacer{
+  height: 30px;
+}
+
+.sidebar-projects > ul > li{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/*Select project effeccts*/
+
+.sidebar-projects > ul > li.selected{
+  background-color: #14aaf5;
+}
+
+li.selected > div > button{
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+}
+
+/*Sidebar project buttons*/
+
+.sidebar-projects > ul > li:hover{
+  background-color: gray;
+}
+
+
+.sidebar-projects > ul > li > button {
+  width: 100%;
+  background-color: transparent;
+  font-size: 13px;
+  height: 40px;
+  color: white;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.sidebar-projects > ul > li > div{
+  padding: 8px;
+}
+
+.sidebar-projects > ul > li.unselected > div > button{
+  background-color: transparent;
+  color: transparent;
+  font-size: 16px;
+}
+
+.sidebar-projects > ul > li:hover > div > button {
+  color: white;
+}
+
+.sidebar-team-members > #team{
+  font-size: 20px;
+  padding: 5px;
+  text-align: center;
+  color: gray;
+  font-weight: lighter;
+}
+
+.sidebar-projects > #projects-header{
+  font-size: 15px;
+  color: gray;
+  padding: 5px;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: row;
+}
+
+#projects-header > #header{
+  padding-top: 3px;
+  margin: 0 10px;
+}
+
+#new-project-btn{
+  justify-content: flex-end;
+  display: flex;
+  width: 100%;
+}
+
+#new-project-btn > button {
+  width: 20px;
+  height: 20px;
+  border-radius: 19px;
+  border: solid white 1px;
+  background-color: transparent;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  padding-bottom: 1px;
+  padding: 0;
+  padding-bottom: 4px;
+  margin: 0 10px;
+}
+
+.sidebar-projects > ul{
+  overflow-y: auto;
+  background-color: #222b37;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}

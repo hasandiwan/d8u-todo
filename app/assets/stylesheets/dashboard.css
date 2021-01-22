@@ -1,0 +1,128 @@
+.dashboard-ui{
+  width: calc(100% - 240px);
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-nav{
+  text-align: center;
+  width: 100%;
+  height: 105px;
+  background-color: white;
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.bottom-bar{
+  border-bottom: solid 2px rgba(162, 162, 162, 0.4);
+  height: 65px;
+  min-width: 500px;
+}
+
+.bottom-bar > div{
+  position: relative;
+  top: 20%;
+}
+
+.bottom-bar > div > h1 {
+  font-size: 24px;
+}
+
+.top-bar {
+  box-shadow: 5px 5px 5px -5px rgba(0,0,0,0.3);
+  height: 42px;
+  display: flex;
+}
+
+.top-bar > div {
+  width: 100%;
+  min-width: 260px;
+  justify-content: flex-end;
+  display: flex;
+}
+
+.view-user-tasks{
+  background-color: transparent;
+  width: 150px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  min-width: 150px;
+}
+
+.settings-menu{
+  list-style: none;
+  display: inline-block;
+  position: relative;
+  right: 10px;
+  z-index: 1;
+}
+
+.settings-menu > div > ul{
+  display: flex;
+  flex-direction: column;
+}
+
+.team-btn{
+  background-color: white;
+  min-width: 200px;
+  border-radius: 1px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.team-btn > div{
+  margin: 0 5px;
+  font-size: 20px;
+  text-align: left;
+  border-bottom: solid gray 1px;
+  height: 20px;
+  padding: 10px 0;
+}
+
+.settings-menu-btn {
+  background-color: transparent;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.settings-dropdown {
+  border: solid black 1px;
+  background-color: white;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  position: relative;
+  border-radius: 5px;
+}
+
+.current-team{
+  height: 100%;
+  font-size: 20px;
+  padding: 8px 10px;
+}
+
+.create-team-btn, .menu-logout-btn, .team-settings-btn, .leave-team-btn{
+  background-color: white;
+  height: 40px;
+  text-align: left;
+  border-radius: 1px;
+}
+
+.settings-menu >button:hover{
+  color: #14aaf5;
+}
+
+.team-btn:hover, .create-team-btn:hover, .menu-logout-btn:hover, .team-settings-btn:hover, .leave-team-btn:hover{
+  background-color: #14aaf5;
+  color: white;
+}

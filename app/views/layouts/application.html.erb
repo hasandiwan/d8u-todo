@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hakuna</title>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'reset', media: 'all' %>
+    <%= stylesheet_link_tag    'dashboard', media: 'all' %>
+    <%= stylesheet_link_tag    'tasks', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109057906-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109057906-1');
+    </script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
