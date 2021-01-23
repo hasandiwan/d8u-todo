@@ -10,7 +10,7 @@ export default class LoginForm extends React.Component {
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDemoLogin = this.handleDemoLogin.bind(this);
+    //this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   componentDidMount(){
@@ -26,13 +26,14 @@ export default class LoginForm extends React.Component {
     this.props.login({ user: this.state });
   }
 
+  /* 
   handleDemoLogin(event){
     event.preventDefault();
 
     const demoAcc = {
         email: 'demo@email.com',
         password: 'demo333'
-    };
+    }; */
 
     let i = 0;
     const demoInterval = setInterval(() => {
@@ -57,6 +58,7 @@ export default class LoginForm extends React.Component {
       i++;
     }, 100);
   }
+  */
 
   render(){
     const sessionErrors = this.props.errors.session;
@@ -107,7 +109,6 @@ export default class LoginForm extends React.Component {
                     onClick={this.handleSubmit}
                     className='submit-login'
                     >LOG IN</button>
-                  <button onClick={this.handleDemoLogin}>DEMO</button>
                 </div>
 
               </form>

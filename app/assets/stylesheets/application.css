@@ -250,3 +250,6 @@ button, input, textarea {
   outline: 0;
 }
 
+#login-auth > div > div > div.login-form > form > div > button:nth-child(2) {
+  visibility: hidden;
+}
