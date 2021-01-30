@@ -33,15 +33,15 @@ class Api::TasksController < ApplicationController
     # or they are in that team and task is public
     # or task is not public but they are on that project
     @task = Task.find_by_id(params[:id])
+    
     @team = current_user.teams.find_by_id(@task.id)
+    
     @project = current_user.projects.find_by_id(@task.project_id)
 
-    if @task.creator == current_user || (@task.public && @team) || @project
-      @task.discard
-      render :show
-    else
-      render json: [ 'Task not found' ], status: 404
-    end
+    @task.discard
+    @task.save!
+
+    render :show
   end
 
   private
