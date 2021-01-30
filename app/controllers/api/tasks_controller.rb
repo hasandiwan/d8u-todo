@@ -37,7 +37,7 @@ class Api::TasksController < ApplicationController
     @project = current_user.projects.find_by_id(@task.project_id)
 
     if @task.creator == current_user || (@task.public && @team) || @project
-      @task.destroy
+      @task.discard
       render :show
     else
       render json: [ 'Task not found' ], status: 404

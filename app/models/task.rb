@@ -1,6 +1,7 @@
 
 
 class Task < ApplicationRecord
+  include Discard::Model
   validates :creator_id, :team_id, presence: true
   validates :public, inclusion: { in: [true, false] }
   validates :completed, inclusion: { in: [true, false] }

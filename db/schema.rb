@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210122074456) do
+ActiveRecord::Schema.define(version: 20210124075326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +42,10 @@ ActiveRecord::Schema.define(version: 20210122074456) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "frequency", default: 0
+    t.datetime "discarded_at"
     t.index ["assignee_id"], name: "index_tasks_on_assignee_id"
     t.index ["creator_id"], name: "index_tasks_on_creator_id"
+    t.index ["discarded_at"], name: "index_tasks_on_discarded_at"
     t.index ["parent_task_id"], name: "index_tasks_on_parent_task_id"
     t.index ["project_id"], name: "index_tasks_on_project_id"
     t.index ["team_id"], name: "index_tasks_on_team_id"
